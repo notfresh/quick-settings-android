@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+local.properties
+captures/
+
+# Native
+.cxx/
+
+# logs
+*.log
+hs_err_pid*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.bak
+*~
+
+# Keystore — 如果你加
+*.jks
+*.keystore
+release.properties
