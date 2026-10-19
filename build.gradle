@@ -1,0 +1,10 @@
+// Top-level build file. AGP 上 classpath(老式),子项目用 apply plugin,不依赖 plugin marker。
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
+}

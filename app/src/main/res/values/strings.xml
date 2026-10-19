@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">快捷</string>
+    <string name="header_title">快速设置</string>
+    <string name="header_subtitle">一键直达常用开关</string>
+    <string name="empty_state">还没有快捷开关,等后续版本补上</string>
+
+    <!-- 通用 -->
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
+
+    <!-- 系统语言 toggle -->
+    <string name="toggle_language_title">系统语言</string>
+    <string name="toggle_language_subtitle_template">当前: %1$s</string>
+    <string name="dialog_language_title">系统语言</string>
+    <string name="dialog_language_message">即将跳转到系统设置里的语言页,改完按返回回到本 App。</string>
+    <string name="dialog_language_no_intent">无法打开系统设置</string>
+</resources>

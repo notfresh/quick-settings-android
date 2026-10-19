@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QToggle</string>
+    <string name="header_title">Quick settings</string>
+    <string name="header_subtitle">One-tap shortcuts to hidden settings</string>
+    <string name="empty_state">No toggles yet — more coming in future versions</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
+    <!-- System language toggle -->
+    <string name="toggle_language_title">System language</string>
+    <string name="toggle_language_subtitle_template">Current: %1$s</string>
+    <string name="dialog_language_title">System language</string>
+    <string name="dialog_language_message">Opening the system language page. Tap back when you\'re done.</string>
+    <string name="dialog_language_no_intent">Cannot open system settings</string>
+</resources>
