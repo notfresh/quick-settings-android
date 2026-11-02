@@ -15,4 +15,16 @@
     <string name="dialog_language_title">System language</string>
     <string name="dialog_language_message">Opening the system language page. Tap back when you\'re done.</string>
     <string name="dialog_language_no_intent">Cannot open system settings</string>
+
+    <!-- Grayscale toggle -->
+    <string name="toggle_grayscale_title">Black &amp; white mode</string>
+    <string name="toggle_grayscale_subtitle">Display → Eye comfort → Paper mode → Black &amp; white</string>
+    <string name="dialog_grayscale_title">Enable B&amp;W mode</string>
+    <string name="dialog_grayscale_message">Opening System Settings → Display. Then tap:\n\nDisplay → Eye comfort (turn on)\n→ Paper mode\n→ Paper color → Black &amp; white</string>
+    <string name="dialog_grayscale_no_intent">Cannot open system settings</string>
+
+    <!-- About toggle -->
+    <string name="toggle_about_title">About</string>
+    <string name="toggle_about_subtitle">Version info and project home</string>
+    <string name="about_version_line">Version %1$s</string>
 </resources>

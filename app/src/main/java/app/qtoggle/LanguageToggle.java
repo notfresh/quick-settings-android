@@ -27,6 +27,11 @@ public class LanguageToggle implements ToggleAction {
     }
 
     @Override
+    public int getIconRes() {
+        return R.drawable.ic_language;
+    }
+
+    @Override
     public String getSubtitle(Context context) {
         Locale current = Locale.getDefault();
         // 用 Locale.getDisplayLanguage(current) —— "中文" locale 下显示"中文",英文下显示"Chinese"。

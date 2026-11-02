@@ -18,6 +18,9 @@ public interface ToggleAction {
     /** 行主标题(stringRes) */
     int getTitleRes();
 
+    /** 行图标(stringRes) */
+    int getIconRes();
+
     /**
      * 行副标题(动态 string)。{@link #getTitleRes()} 是固定资源;此方法因为部分 toggle
      * 的副标题包含动态值(如当前语言 / 当前亮度),返回 String 而不是 StringRes。

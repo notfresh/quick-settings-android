@@ -15,4 +15,16 @@
     <string name="dialog_language_title">系统语言</string>
     <string name="dialog_language_message">即将跳转到系统设置里的语言页,改完按返回回到本 App。</string>
     <string name="dialog_language_no_intent">无法打开系统设置</string>
+
+    <!-- 屏幕灰度 toggle -->
+    <string name="toggle_grayscale_title">黑白模式</string>
+    <string name="toggle_grayscale_subtitle">显示 → 护眼模式 → 纸质护眼 → 黑白</string>
+    <string name="dialog_grayscale_title">开启黑白模式</string>
+    <string name="dialog_grayscale_message">即将跳转到系统「设置 → 显示」页,请按以下路径操作:\n\n显示 → 护眼模式(开启)\n→ 纸质护眼\n→ 纸质色彩 → 黑白</string>
+    <string name="dialog_grayscale_no_intent">无法打开系统设置</string>
+
+    <!-- 关于 toggle -->
+    <string name="toggle_about_title">关于</string>
+    <string name="toggle_about_subtitle">版本信息与项目主页</string>
+    <string name="about_version_line">版本 %1$s</string>
 </resources>

@@ -59,6 +59,7 @@ public class ToggleListAdapter extends RecyclerView.Adapter<ToggleListAdapter.VH
         final ToggleAction action = toggles.get(position);
         holder.title.setText(action.getTitleRes());
         holder.subtitle.setText(action.getSubtitle(holder.itemView.getContext()));
+        holder.icon.setImageResource(action.getIconRes());
         holder.itemView.setOnClickListener(v -> clickListener.onToggleClicked(position));
     }
 

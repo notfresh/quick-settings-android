@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity implements ToggleAction.Host
 
         adapter.submit(buildDefaultToggles());
         refreshEmptyState();
+
+        // 清掉 V1.0 遗留的 per-app 语言覆盖(当时选过 English,值被持久化在系统设置里)。
+        // 不清的话:系统语言改成中文后,App 进程 locale 仍被覆盖成 en → 界面一直是英文。
+        if (PerAppLocaleReset.clearIfStale(this)) {
+            // 已清掉,系统会 recreate Activity,此处不必继续刷新
+            return;
+        }
     }
 
     @Override
@@ -62,9 +69,11 @@ public class MainActivity extends AppCompatActivity implements ToggleAction.Host
     }
 
     private List<ToggleAction> buildDefaultToggles() {
-        // V1:只有系统语言跳转。后续添加 "夜间模式 / 默认浏览器 / 通知权限 ..." 在此 push。
+        // V1:系统语言跳转 + 屏幕灰度跳转。后续"夜间模式 / 默认浏览器 / 通知权限 ..."在此 push。
         return Arrays.asList(
-                new LanguageToggle()
+                new LanguageToggle(),
+                new GrayscaleToggle(),
+                new AboutToggle()
         );
     }
 
