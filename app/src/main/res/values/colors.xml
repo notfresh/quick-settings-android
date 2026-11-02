@@ -10,4 +10,10 @@
     <color name="surface_dark">#121212</color>
     <color name="divider">#E0E0E0</color>
     <color name="text_secondary">#666666</color>
+
+    <!-- 正文主色。
+         不用 ?android:attr/textColorPrimary —— 该 attr 在 layoutlib(Paparazzi 截图)
+         与部分 OEM 主题下解析为全透明 0x00000000,导致标题隐形。
+         固定色 + values-night 覆盖 = 行为可预测。 -->
+    <color name="text_primary">#1A1A1A</color>
 </resources>

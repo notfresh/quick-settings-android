@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'app.cash.paparazzi' version '1.3.5'
 }
 
 android {
@@ -10,8 +11,8 @@ android {
         applicationId = "app.qtoggle"
         minSdk = 24
         targetSdk = 34
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,4 +41,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Paparazzi — 用 layoutlib 在 JVM 上渲染 layout 出真截图(无需 emulator)。
+    // 跑:./gradlew :app:recordPaparazziDebug   产物在 app/src/test/screenshots/
+    testImplementation 'app.cash.paparazzi:paparazzi:1.3.5'
 }

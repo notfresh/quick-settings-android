@@ -33,13 +33,33 @@ public class LanguageToggle implements ToggleAction {
 
     @Override
     public String getSubtitle(Context context) {
-        Locale current = Locale.getDefault();
+        // 用 Resources 的 configuration 而不是 Locale.getDefault() ——
+        // 后者在 per-app locale 场景下不一定跟着当前 App 实际生效的语言走,
+        // Resources 一定准(它就是 App 拿资源的 locale)。
+        Locale current = resolveCurrentLocale(context);
         // 用 Locale.getDisplayLanguage(current) —— "中文" locale 下显示"中文",英文下显示"Chinese"。
         String display = current.getDisplayLanguage(current);
         if (display == null || display.isEmpty()) {
             display = current.getLanguage();
         }
         return context.getString(R.string.toggle_language_subtitle_template, display);
+    }
+
+    private static Locale resolveCurrentLocale(Context context) {
+        try {
+            android.content.res.Configuration config = context.getResources().getConfiguration();
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                android.os.LocaleList locales = config.getLocales();
+                if (locales != null && !locales.isEmpty()) {
+                    return locales.get(0);
+                }
+            } else if (config.locale != null) {
+                return config.locale;
+            }
+        } catch (Exception e) {
+            // fallback 到默认 locale
+        }
+        return Locale.getDefault();
     }
 
     @Override
