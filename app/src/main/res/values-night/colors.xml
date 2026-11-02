@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 夜间模式下的正文主色(浅色文字配深色背景) -->
+    <color name="text_primary">#ECECEC</color>
+    <color name="text_secondary">#A0A0A0</color>
+</resources>
