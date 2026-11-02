@@ -9,6 +9,12 @@
   <a href="#中文">中文</a> · <a href="#english">English</a>
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/main-zh.png" width="260" alt="主屏(中文)">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/main-en.png" width="260" alt="Main screen (English)">
+</p>
+
 ---
 
 <a name="中文"></a>
@@ -88,11 +94,25 @@ public class MyToggle implements ToggleAction {
 - gradle 8.7 / AGP 8.1.0 / minSdk 24 / target 34
 - 包名 `app.qtoggle`,applicationId 独立于仓库名
 
+### 截图测试(Paparazzi)
+
+用 [Paparazzi](https://github.com/cashapp/paparazzi) 在 JVM 上跑 layoutlib 出**真渲染截图**,
+不需要 emulator:
+
+```bash
+./gradlew :app:recordPaparazziDebug   # 重新生成截图
+./gradlew :app:verifyPaparazziDebug    # 校验 UI 有没有跟基线图漂移
+```
+
+产物在 `app/src/test/snapshots/images/`,`docs/screenshots/` 里是给 README 用的副本。
+每次改 UI 后跑一次 record,再 commit 新图 —— 截图不会腐烂。
+
 ## 版本
 
 | 版本 | 内容 |
 | --- | --- |
-| 1.2 | 修复「系统语言改中文后 App 仍显示英文」;App 改为跟随系统语言 |
+- 1.3:修复列表项标题在部分主题下隐形(`?android:attr/textColorPrimary` 解析为全透明);新增 Paparazzi 截图测试
+- 1.2:修复「系统语言改中文后 App 仍显示英文」;App 改为跟随系统语言
 | 1.1 | 新增「黑白模式」快捷跳转;新增「关于」弹窗 |
 | 1.0 | 系统语言跳转 |
 
@@ -181,6 +201,20 @@ public class MyToggle implements ToggleAction {
 - Java + AppCompat (no Kotlin, no learning debt)
 - Gradle 8.7 / AGP 8.1.0 / minSdk 24 / target 34
 - Package `app.qtoggle`; the applicationId is independent of the repo name
+
+### Screenshot tests (Paparazzi)
+
+[Paparazzi](https://github.com/cashapp/paparazzi) runs layoutlib on the JVM to produce
+**real rendered screenshots** — no emulator required:
+
+```bash
+./gradlew :app:recordPaparazziDebug   # regenerate the screenshots
+./gradlew :app:verifyPaparazziDebug    # fail if the UI drifted from the golden images
+```
+
+Output lands in `app/src/test/snapshots/images/`; `docs/screenshots/` holds the copies
+used by this README. Re-run `record` after any UI change and commit the new images —
+the screenshots never go stale.
 
 ## Versions
 
